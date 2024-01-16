@@ -23,6 +23,6 @@ class Category extends Model
         return $slug;
     }
     public function projects(){
-        return $this->belongsTo(Project::class);
+        return $this->hasMany(Project::class);
     }
 }
