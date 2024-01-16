@@ -91,7 +91,7 @@ class ProjectController extends Controller
         }
 
         //add slug to formData
-        $formData['slug'] = $slug;
+        $formData['slug'] = $project->slug;
 
         //aggiungiamo l'id dell'utente
         $formData['user_id'] = $project->user_id;
