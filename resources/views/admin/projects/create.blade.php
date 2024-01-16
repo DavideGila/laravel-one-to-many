@@ -33,12 +33,11 @@
             </div>
 
             <div class="mb-3">
-                <label for="category">Select Category</label>
+                <label for="category_id">Select Category</label>
                 <select class="form-control @error('category_id') is-invalid @enderror" name="category_id" id="category_id">
                     <option value="">Select a Category</option>
                     @foreach ($categories as $category)
-                        <option value="{{ $category->id }}"
-                            {{ old('category_id', $project->category_id) == $category->id ? 'selected' : '' }}>
+                        <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>
                             {{ $category->name }}</option>
                     @endforeach
                 </select>
