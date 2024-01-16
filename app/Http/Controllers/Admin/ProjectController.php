@@ -51,14 +51,13 @@ class ProjectController extends Controller
         //aggiungiamo l'id dell'utente
         $formData['user_id'] = $userId;
 
-
         if ($request->hasFile('image')){
             $img_path = Storage::put('uploads', $formData['image']);
             $formData['image'] = $img_path;
         }
         $project = Project::create($formData);
 
-        return redirect()->route('admin.projects.show', $project->id);
+        return redirect()->route('admin.projects.show', $project);
     }
 
     /**
@@ -107,7 +106,7 @@ class ProjectController extends Controller
 
 
         $project->update($formData);
-        return redirect()->route('admin.projects.show', $project->id);
+        return redirect()->route('admin.projects.show', $project);
     }
 
     /**
